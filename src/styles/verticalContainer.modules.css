@@ -1,0 +1,24 @@
+.container{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.v-left-side , .v-right-side{
+    width: 50%;
+    margin: 0.5rem;
+}
+.img-holder{
+    width: 100%;
+    height: 100%;
+}
+.main-image{
+    width: 100%;
+    height: 100%;
+}
+.side-image{
+    width: 60px;
+    height: 60px;
+}
