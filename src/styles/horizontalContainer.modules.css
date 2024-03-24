@@ -1,0 +1,23 @@
+.h-container{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.h-up-side , .h-bottom-side{
+    display: flex;
+    width: 100%;
+    height: 50%;
+    margin: 0.5rem;
+    text-align: center;
+}
+h1 , h3{
+    text-align: center;
+}
+.h-bottom-side{
+    display: flex;
+    width: 100%;
+}

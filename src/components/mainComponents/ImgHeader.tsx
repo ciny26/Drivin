@@ -5,6 +5,7 @@ const imgHeaderStyle: React.CSSProperties = {
   width: '100%',
   height: '60vh',
   overflow: 'hidden',
+  marginBottom: '60px'
 };
 
 const overlayStyle: React.CSSProperties = {
