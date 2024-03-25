@@ -21,7 +21,6 @@ const About = () => {
                     ))}
                 </div>
             </HorizontalContainer>
-            this is about 
         </>
     );
 }

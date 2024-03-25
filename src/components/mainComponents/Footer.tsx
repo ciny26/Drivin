@@ -1,40 +1,33 @@
-import styled from 'styled-components';
-
-const FooterContainer = styled.footer`
-  background-color: #222; /* Set background color */
-  color: #fff; /* Set text color */
-  padding: 40px 20px; /* Add padding */
-`;
-
-const FooterContent = styled.div`
-  width: 100%; /* Set maximum width */
-  display: flex; /* Use flexbox layout */
-  justify-content: space-between; /* Space content evenly */
-  align-items: center; /* Center align items vertically */
-`;
-
-const PhoneNumber = styled.p`
-  font-size: 18px; /* Set font size */
-`;
-
-const SocialLinks = styled.div`
-  display: flex; /* Use flexbox layout */
-`;
-
-const SocialLink = styled.a`
-  color: #fff; /* Set link color */
-  text-decoration: none; /* Remove underline */
-  font-size: 24px; /* Set font size */
-  margin-right: 20px; /* Add right margin between links */
-`;
-
+import "../../styles/footer.modules.css"
+import ImagedItem from "../elementComps/imagedItem";
+import { getInTouchData , quickLinksData , followUsData } from "../../DynamicData";
+import rightArrow from "../../assets/svgs/rightArrow.svg"
 const Footer = () => {
   return (
-    <FooterContainer>
-      <FooterContent>
-        <PhoneNumber>Phone: +1234567890</PhoneNumber>   
-      </FooterContent>
-    </FooterContainer>
+   
+   <footer className="footer-container">
+      <div className="info-wrapper primary-conatct-infos">
+        <h1>Get In Touch</h1>
+        {getInTouchData.map((item , index)=>(
+            <ImagedItem key={index} data={item.info} itemImg={item.imgURL}/>
+        ))}
+      </div>
+      <div className="info-wrapper quick-links">
+            <h1>Quick Links</h1>
+            {quickLinksData.map((item , index)=>(
+            <ImagedItem key={index} data={item.info} itemImg={rightArrow}/>
+        ))}
+      </div>
+      <div className="info-wrapper social-media-infos">
+              <h1>Follow Us</h1>
+              {followUsData.map((item , index)=>(
+            <ImagedItem key={index} data={item.info} itemImg={item.imgURL}/>
+        ))}
+      </div>
+      {/* <div className="copyright-section">
+        All Right Are reserved &copy;
+      </div> */}
+   </footer>
   );
 };
 

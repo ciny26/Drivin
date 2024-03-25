@@ -1,6 +1,7 @@
 import  {StyledBtn}  from "../elementComps/StyledBtn.styles";
 import { DataPrincipes } from "../../DynamicData";
-import PrincipeItem from "../elementComps/PrincipeItem";
+import ImagedItem from "../elementComps/imagedItem.tsx";
+import rightSymb from "../../assets/svgs/rightSymb.svg"
 const AboutInfos = () => {
     return ( 
         <>
@@ -10,7 +11,8 @@ const AboutInfos = () => {
             <StyledBtn>Click Me</StyledBtn>
             <div className="principe-container">
                 {DataPrincipes.map((item , index) => (
-                    <PrincipeItem key={index} principe={item}/>
+                     <ImagedItem key={index} data={item}  itemImg={rightSymb}/> 
+                   
                 ))}
             </div>
             

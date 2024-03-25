@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import RightSvg from "../../assets/svgs/rightSymb.svg";
 
 type PrincipeProps = {
-    principe: string;
+    data: string;
+    itemImg?:string
 }
 
 const PrincipeItm = styled.div`
@@ -21,13 +21,13 @@ const PrincipeImg = styled.img`
     height: 20px; /* Define height of the image */
 `;
 
-const PrincipeItem = ({ principe }: PrincipeProps) => {
+const imagedItem = ({ data , itemImg }: PrincipeProps) => {
     return (
         <PrincipeItm>
-            <PrincipeImg src={RightSvg} alt="Right Symbol" /> {/* Render image with src attribute */}
-            <Principetext>{principe}</Principetext>
+            <PrincipeImg src={itemImg} alt="Right Symbol" /> {/* Render image with src attribute */}
+            <Principetext>{data}</Principetext>
         </PrincipeItm>
     );
 };
 
-export default PrincipeItem;
+export default imagedItem;
