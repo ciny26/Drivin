@@ -21,7 +21,7 @@ const imgStyle: React.CSSProperties = {
   width: '100%',
   height: '100%',
   objectFit: 'cover',
-  objectPosition: "50% 25%"
+  objectPosition: "50% 50%"
 };
 
 const pageName : React.CSSProperties = {
@@ -33,10 +33,10 @@ const pageName : React.CSSProperties = {
   zIndex:"99"
 }
 
-const ImgHeader = ({ backImgURL }: { backImgURL: string }) => {
+const ImgHeader = ({ backImgURL , backgroundTitle }: { backImgURL: string , backgroundTitle:string}) => {
     return (
       <div style={imgHeaderStyle}>
-        <h1 style={pageName}>ABOUT US</h1>
+        <h1 style={pageName}>{backgroundTitle}</h1>
         <img src={backImgURL} alt="" style={imgStyle} />
         <div style={overlayStyle}></div>
       </div>

@@ -11,13 +11,13 @@ import TeamCard from "../components/elementComps/TeamCard";
 const About = () => {
     return (
         <>
-            <ImgHeader backImgURL={AboutBck}></ImgHeader>
+            <ImgHeader backImgURL={AboutBck} backgroundTitle="About Us"></ImgHeader>
             <VerticalContainer mainImgURL={vMainImg} sideImgURL={null}><AboutInfos/></VerticalContainer>
             <HorizontalContainer>
                 <TeamText/>
                 <div className="h-bottom-side">
-                    {teamArray.map((person, index) => ( // Rename Person to person for consistency
-                        <TeamCard key={index} person={person}/> // Use person instead of Person
+                    {teamArray.map((it, index) => ( // Rename Person to person for consistency
+                        <TeamCard key={index} item={it}/> // Use person instead of Person
                     ))}
                 </div>
             </HorizontalContainer>

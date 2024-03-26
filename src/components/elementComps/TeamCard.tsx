@@ -1,22 +1,22 @@
-type Person = {
-    Pname: string;
-    Poccup: string;
-    pImage?:string
+type CardItem = {
+    name: string;
+    desc: string;
+    image?:string
 }
 
 type TeamCardProps = {
-    person: Person;
+    item: CardItem ;
 }
 
-const TeamCard = ({person} : TeamCardProps) => {
+const TeamCard = ({item} : TeamCardProps) => {
     return ( 
         <div className="card-container">
             <div className="person-img">
-                <img src={person.pImage} alt="Team member" />
+                <img src={item.image} alt="Team member" />
             </div>
             <div className="person-infos">
-                <h1 className="person-name">{person.Pname}</h1>
-                <p className="perosn-job">{person.Poccup}</p>
+                <h1 className="person-name">{item.name}</h1>
+                <p className="perosn-job">{item.desc}</p>
             </div>
         </div>
      );

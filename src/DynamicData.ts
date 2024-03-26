@@ -8,7 +8,10 @@ import location from "./assets/svgs/location.svg"
 import facebook from "./assets/svgs/facebook.svg"
 import instagram from "./assets/svgs/instagram.svg"
 import linkedin from "./assets/svgs/linkedin.svg"
-
+import automatic from "./assets/courses_images/automatic_course.jpg"
+import highWay from "./assets/courses_images/highway_course.jpg"
+import parking from "./assets/courses_images/parking_course.jpg"
+//Team members images
 const Pimages = {
     flen,
     didine,
@@ -16,52 +19,54 @@ const Pimages = {
     lotfi
 };
 
+//contact SVGs
 const getInTouchImages = {
     email,
     location,
     phone
 }
+//social meadia SVGs
 
 const socialMediaImages={
     facebook,
     instagram,
     linkedin
 }
-
+//principes
 export const DataPrincipes :string[] =
  ["Safety Priority" , "Tailored Learning" , "Uncompromised Excellence" , "Community-Centered Approach"]
-
+//Team members
  export interface TeamMember {
-    Pname: string;
-    Poccup: string;
-    pImage : string
+    name: string;
+    desc: string;
+    image : string
 }
 
 export const teamArray: TeamMember[] = [
     {
-        Pname: "Flen dz",
-        Poccup: "Driver",
-        pImage: Pimages.flen
+        name: "Flen dz",
+        desc: "Driver",
+        image: Pimages.flen
     },
     {
-        Pname: "Zed k",
-        Poccup: "Trainer",
-        pImage: Pimages.zedk
+        name: "Zed k",
+        desc: "Trainer",
+        image: Pimages.zedk
     },
     {
-        Pname: "Didine",
-        Poccup: "Teacher",
-        pImage: Pimages.didine
+        name: "Didine",
+        desc: "Teacher",
+        image: Pimages.didine
     },
     {
-        Pname: "Lotfi DC",
-        Poccup: "Owner",
-        pImage: Pimages.lotfi
+        name: "Lotfi DC",
+        desc: "Owner",
+        image: Pimages.lotfi
     }
 ];
 
 type imagedItem = {info:string , imgURL?:string}[]
-//footer infos
+//**footer infos
 //get in touch
 export const getInTouchData :imagedItem=[
     {
@@ -69,7 +74,7 @@ export const getInTouchData :imagedItem=[
         imgURL:getInTouchImages.email
     },
     {
-        info:"Street123 , NewYork , Usa",
+        info:"Street123 NewYork Usa",
         imgURL:getInTouchImages.location
     },
     {
@@ -109,4 +114,50 @@ export const followUsData :imagedItem=[
         imgURL:socialMediaImages.linkedin
     }
 ]
+
+
+
+//**Courses
+
+const coursesImgs = {
+    automatic , 
+    highWay , 
+    parking
+}
+
+const coursesDescs={
+    autoCar:"Master the art of driving with ease. Our automatic cars lessons offer tailored instruction to help you navigate the road confidently. Join us and discover the simplicity and convenience of automatic driving.",
+    highWay:"Gain the skills and confidence to navigate highways safely and effectively. Our lessons cover merging, lane changes, and highway etiquette. Join us and conquer the open road with ease.",
+    parking:"Unlock the secrets to stress-free parking with our expert-led lessons. Gain confidence in parallel parking, reverse parking, and more. Join us and conquer the challenges of parking like a pro."
+
+}
+//Courses obj
+
+
+export interface Course {
+    name: string;
+    desc: string;
+    image : string
+}
+
+
+
+export const coursesArray :Course[] =[
+    {
+        name:"Automatic Cars Lessons",
+        desc:coursesDescs.autoCar,
+        image: coursesImgs.automatic
+    },
+    {
+        name:"Highway Driving Lessons",
+        desc:coursesDescs.highWay,
+        image:coursesImgs.highWay
+    },
+    {
+        name:"Parking Lessons",
+        desc:coursesDescs.parking,
+        image:coursesImgs.parking
+    },
+    
+] 
 

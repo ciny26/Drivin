@@ -8,10 +8,10 @@ const HorizontalContainer = ({ children }: HorizontalContainerProps) => {
     return (
         <div className="h-container">
             <section className="h-up-side">
-                {React.Children.toArray(children)[0]} {/* Render the first child */}
+                {React.Children.toArray(children)[0]} {/* Team text (Header , paragraph) */}
             </section>
-            <section className="h-up-bottom">
-                {React.Children.toArray(children)[1]} {/* Render the second child */}
+            <section className="h-bottom-side">
+                {React.Children.toArray(children)[1]} {/* Tea member img and role */}
             </section>
         </div>
     );

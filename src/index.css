@@ -6,6 +6,7 @@
   color-scheme: light dark;
   color: #242424;
   background-color: rgba(255, 255, 255, 0.3) ;
+  --blue-color : var(#0C2B4B)
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -19,6 +20,9 @@ html , body{
   width: 100%;
   overflow-x: none;
   box-sizing: border-box;
+}
+#root{
+  margin-top: 70px;
 }
 
 .h-bottom-side{
@@ -70,5 +74,7 @@ html , body{
   transition: .3s, background-size .3s .3s;
 }
 
-
+.isHighlited{
+  background-color: #ffc107;
+}
 
