@@ -13,7 +13,6 @@ form {
   textarea {
     width: 100%;
     padding: 8px;
-    margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 4px;
     background: #e4eef7
@@ -24,3 +23,16 @@ form {
     height: 150px; /* Adjust height as needed */
   }
   
+  .message-box {
+    background-color: white;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.6); /* Shadow */
+    border: 0.5px solid rgba(0, 0, 0, 0.233);
+    padding: 20px; /* Add some padding */
+    position: fixed; /* Change to fixed */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center the box */
+    max-width: 250px; /* Set maximum width */
+    text-align: center; /* Center text */
+}

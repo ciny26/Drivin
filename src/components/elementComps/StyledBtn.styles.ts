@@ -14,3 +14,13 @@ export const StyledBtn = styled.button`
     background-color: #6a1b9a; /* Purple color */
   }
 `;
+
+export const CloseBtn = styled(StyledBtn)`
+height: 50px;
+font-size:1rem;
+padding: 2px 10px;
+background-color: red; /* Purple color */
+&:hover {
+background-color:red 
+}
+`

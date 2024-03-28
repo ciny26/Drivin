@@ -7,6 +7,7 @@ import vMainImg from "../assets/vert_cont_imgs/About_imgs/v-main-img.jpg";
 import TeamText from "../components/AboutComps/TeamTextCom";
 import { teamArray } from "../DynamicData";
 import TeamCard from "../components/elementComps/TeamCard";
+import { overlayImg } from "../DynamicData";
 
 const About = () => {
     return (
@@ -17,7 +18,7 @@ const About = () => {
                 <TeamText/>
                 <div className="h-bottom-side">
                     {teamArray.map((it, index) => ( // Rename Person to person for consistency
-                        <TeamCard key={index} item={it}/> // Use person instead of Person
+                        <TeamCard key={index} item={it} overLayImg={overlayImg}/> // Use person instead of Person
                     ))}
                 </div>
             </HorizontalContainer>

@@ -11,6 +11,8 @@ import linkedin from "./assets/svgs/linkedin.svg"
 import automatic from "./assets/courses_images/automatic_course.jpg"
 import highWay from "./assets/courses_images/highway_course.jpg"
 import parking from "./assets/courses_images/parking_course.jpg"
+import YellowFb from "./assets/svgs/yellowFb.svg"
+import YellowInsta from "./assets/svgs/yellowInsta.svg"
 //Team members images
 const Pimages = {
     flen,
@@ -161,3 +163,8 @@ export const coursesArray :Course[] =[
     
 ] 
 
+//carditem overlay imgs
+
+export const overlayImg = [
+    YellowFb , YellowInsta 
+]
