@@ -4,12 +4,14 @@
     height: fit-content;
     align-items: center;
     justify-content: space-around;
-    margin-bottom: 60px;
 }
 
 .v-left-side , .v-right-side{
     width: 100%;
     margin: 0.5rem;
+    opacity: 0;
+    transform: translateY(60px);
+    transition: opacity 0.5s ease, transform 1s ease;
 }
 .v-right-side{
     height: 100%;
@@ -34,4 +36,14 @@
 button{
     margin: 10px;
 }
+.visible{
+    opacity: 1;
+    transform: translateY(0px);
+}
+/* styles.css */
 
+/* Define the initial state of your component */
+
+  /* Define styles when the component becomes visible */
+  
+  

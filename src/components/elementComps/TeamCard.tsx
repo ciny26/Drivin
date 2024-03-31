@@ -12,6 +12,7 @@ type TeamCardProps = {
     item: CardItem ;
     overLayImg?:string[] | undefined
     children?:React.ReactNode | undefined
+    className?:string
 }
 
 

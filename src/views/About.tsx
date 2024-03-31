@@ -10,13 +10,14 @@ import TeamCard from "../components/elementComps/TeamCard";
 import { overlayImg } from "../DynamicData";
 
 const About = () => {
+    
     return (
         <>
             <ImgHeader backImgURL={AboutBck} backgroundTitle="About Us"></ImgHeader>
             <VerticalContainer mainImgURL={vMainImg} sideImgURL={null}><AboutInfos/></VerticalContainer>
             <HorizontalContainer>
                 <TeamText/>
-                <div className="h-bottom-side">
+                <div className="bottom-cont">
                     {teamArray.map((it, index) => ( // Rename Person to person for consistency
                         <TeamCard key={index} item={it} overLayImg={overlayImg}/> // Use person instead of Person
                     ))}

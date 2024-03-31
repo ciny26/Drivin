@@ -10,7 +10,7 @@ export const ReadMoreBtn = styled.button`
   transition: background-color .4s ease; /* Smooth transition effect */
 
   &:hover {
-    background-color: orange; 
-    color:white
+    background-color: transparent; 
+    
   }
 `;

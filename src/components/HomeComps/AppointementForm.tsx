@@ -1,9 +1,9 @@
+import React, { useState } from 'react';
 import { StyledBtn } from "../elementComps/StyledBtn.styles";
 import { CloseBtn } from "../elementComps/StyledBtn.styles";
 import "../../styles/form.modules.css";
 import "../../styles/verticalContainer.modules.css";
 import { useForm } from "react-hook-form";
-import { useState } from "react";
 
 const errorStyle: React.CSSProperties = {
   color: "red",
@@ -17,7 +17,8 @@ const errorStyle: React.CSSProperties = {
 type FormData = {
   username: string;
   email: string;
-  subject: string;
+  course: string;
+  carType: string;
   message: string;
 };
 
@@ -25,9 +26,12 @@ interface ChildProps {
   sendDataToParent: (data: boolean) => void; // Define callback function type
 }
 
-const ContactForm: React.FC<ChildProps> = ({ sendDataToParent }) => {
+const HomeForm: React.FC<ChildProps> = ({ sendDataToParent }) => {
   const { register, handleSubmit, formState: { errors }, getValues } = useForm<FormData>();
   const [messageBoxOn, setMessageBoxOn] = useState<boolean>(false);
+
+  // Define an array of valid car types
+  const validCarTypes: string[] = ['Toyota', 'Honda', 'Ford', 'Chevrolet', 'Nissan'];
 
   const onSubmit = (data: FormData) => {
     setMessageBoxOn(true);
@@ -42,8 +46,8 @@ const ContactForm: React.FC<ChildProps> = ({ sendDataToParent }) => {
   return (
     <>
       <form onSubmit={handleSubmit(onSubmit)} noValidate>
-        <p>CONTACT US</p>
-        <h1> If You Have Any Query, Please Contact Us</h1>
+        
+        <h1> Make an appointment</h1>
         <div className="personData">
           <label htmlFor="username">Your Name</label>
           <input type="text" id="username" {...register("username", { required: "Username is required", pattern: { value: /^[a-zA-Z ]{2,30}$/, message: "Invalid name" } })} />
@@ -56,10 +60,20 @@ const ContactForm: React.FC<ChildProps> = ({ sendDataToParent }) => {
           {/* Display validation error message */}
         </div>
 
-        <div className="subject">
-          <label htmlFor="subject">Subject</label>
-          <input type="text" id="subject" {...register("subject", { required: "Subject is required" })} />
-          {errors.subject && <p style={errorStyle}>{errors.subject.message}</p>}
+        <div className="courseData">
+          <label htmlFor="course">Course</label>
+          <input type="text" id="course" {...register("course", { required: "Course is required" })} />
+          {errors.course && <p style={errorStyle}>{errors.course.message}</p>}
+          {/* Display validation error message */}
+
+          <label htmlFor="carType">Car Type</label>
+          <select id="carType" {...register("carType", { required: "Car Type is required", validate: value => validCarTypes.includes(value) || "We don't have this type of car " })}>
+            <option value="">Select Car Type</option>
+            {validCarTypes.map(carType => (
+              <option key={carType} value={carType}>{carType}</option>
+            ))}
+          </select>
+          {errors.carType && <p style={errorStyle}>{errors.carType.message}</p>}
           {/* Display validation error message */}
         </div>
 
@@ -75,8 +89,8 @@ const ContactForm: React.FC<ChildProps> = ({ sendDataToParent }) => {
       {messageBoxOn && (
         <div className="message-box">
           <h1>Great Job</h1>
-          {getValues("username")} your message was sent successfully <br />
-          You will find the answer in {getValues("email")}
+          {getValues("username")} you made an appointemet <br />
+          You will find convinient time and email you on the adress that you provided
           <CloseBtn onClick={closeMessageBox}>Close</CloseBtn>
         </div>
       )}
@@ -84,4 +98,4 @@ const ContactForm: React.FC<ChildProps> = ({ sendDataToParent }) => {
   );
 };
 
-export default ContactForm;
+export default HomeForm;

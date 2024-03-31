@@ -12,7 +12,7 @@ import { ReadMoreBtn } from "../components/elementComps/ReadMoreBtn..styles";
            <ImgHeader backImgURL={CoursesBck} backgroundTitle="Courses"></ImgHeader>
            <HorizontalContainer  >
                 <CardsTitles/>
-                <div className="h-bottom-side ">
+                <div className="bottom-cont ">
                     {coursesArray.map((it, index) => ( // Rename Person to person for consistency
                         <TeamCard key={index} item={it}><ReadMoreBtn>Read More</ReadMoreBtn></TeamCard> // Use person instead of Person
                     ))}

@@ -16,7 +16,6 @@ const NavBar = () => {
                 <NavLink to="/about">About</NavLink>
                 <NavLink to="/courses">Courses</NavLink>
                 <NavLink to="/contact">Contact</NavLink>
-                <StyledBtn>SignUp</StyledBtn>
             </div>
             
 

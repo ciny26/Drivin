@@ -168,3 +168,39 @@ export const coursesArray :Course[] =[
 export const overlayImg = [
     YellowFb , YellowInsta 
 ]
+//scroll animation
+// scrollAnimation.ts
+import { useState, useEffect } from 'react';
+
+export const handleScroll = (compRef: React.RefObject<HTMLDivElement>) => {
+  const [isVisible, setIsVisible] = useState(false);
+  const [hasBeenScrolledIntoView, setHasBeenScrolledIntoView] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!hasBeenScrolledIntoView && compRef.current) {
+        const componentPosition = compRef.current.getBoundingClientRect().top;
+        const scrollPosition = window.scrollY;
+        const windowHeight = window.innerHeight;
+        const threshold = windowHeight / 2;
+
+        if (scrollPosition > componentPosition - windowHeight + threshold) {
+          setIsVisible(true);
+          setHasBeenScrolledIntoView(true);
+        }
+      }
+    };
+
+    // Check visibility on component mount
+    handleScroll();
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [compRef, hasBeenScrolledIntoView]);
+
+  return isVisible;
+};
+
