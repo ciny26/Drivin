@@ -36,7 +36,7 @@ const socialMediaImages={
 }
 //principes
 export const DataPrincipes :string[] =
- ["Safety Priority" , "Tailored Learning" , "Uncompromised Excellence" , "Community-Centered Approach"]
+ ["Safety " , " Learning" , " Excellence"]
 //Team members
  export interface TeamMember {
     name: string;

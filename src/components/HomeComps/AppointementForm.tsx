@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { StyledBtn } from "../elementComps/StyledBtn.styles";
 import { CloseBtn } from "../elementComps/StyledBtn.styles";
-import "../../styles/form.modules.css";
 import "../../styles/verticalContainer.modules.css";
 import { useForm } from "react-hook-form";
+import "../../styles/appointementForm.modules.css"
 
 const errorStyle: React.CSSProperties = {
   color: "red",
@@ -45,36 +45,51 @@ const HomeForm: React.FC<ChildProps> = ({ sendDataToParent }) => {
 
   return (
     <>
-      <form onSubmit={handleSubmit(onSubmit)} noValidate>
+      <form className='appointement-form' onSubmit={handleSubmit(onSubmit)} noValidate>
         
         <h1> Make an appointment</h1>
         <div className="personData">
-          <label htmlFor="username">Your Name</label>
-          <input type="text" id="username" {...register("username", { required: "Username is required", pattern: { value: /^[a-zA-Z ]{2,30}$/, message: "Invalid name" } })} />
-          {errors.username && <p style={errorStyle}>{errors.username.message}</p>}
-          {/* Display validation error message */}
+          <div className="input_group">
+              <label htmlFor="username">Your Name</label>
+              <input type="text" id="username" {...register("username", { required: "Username is required", pattern: { value: /^[a-zA-Z ]{2,30}$/, message: "Invalid name" } })} />
+              {errors.username && <p style={errorStyle}>{errors.username.message}</p>}
+              {/* Display validation error message */}
+          </div>
+          
 
-          <label htmlFor="email">Your Email</label>
-          <input type="email" id="email" {...register("email", { required: "Email is required", pattern: { value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i, message: "Invalid email address" } })} />
-          {errors.email && <p style={errorStyle}>{errors.email.message}</p>}
-          {/* Display validation error message */}
+
+
+          <div className="input_group">
+            <label htmlFor="email">Your Email</label>
+            <input type="email" id="email" {...register("email", { required: "Email is required", pattern: { value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i, message: "Invalid email address" } })} />
+            {errors.email && <p style={errorStyle}>{errors.email.message}</p>}
+            {/* Display validation error message */}
+          </div>
+          
         </div>
 
         <div className="courseData">
-          <label htmlFor="course">Course</label>
-          <input type="text" id="course" {...register("course", { required: "Course is required" })} />
-          {errors.course && <p style={errorStyle}>{errors.course.message}</p>}
-          {/* Display validation error message */}
+          <div className="input_group">
+              <label htmlFor="course">Course</label>
+              <input type="text" id="course" {...register("course", { required: "Course is required" })} />
+              {errors.course && <p style={errorStyle}>{errors.course.message}</p>}
+              {/* Display validation error message */}
+          </div>
+          
 
-          <label htmlFor="carType">Car Type</label>
-          <select id="carType" {...register("carType", { required: "Car Type is required", validate: value => validCarTypes.includes(value) || "We don't have this type of car " })}>
-            <option value="">Select Car Type</option>
-            {validCarTypes.map(carType => (
-              <option key={carType} value={carType}>{carType}</option>
-            ))}
-          </select>
-          {errors.carType && <p style={errorStyle}>{errors.carType.message}</p>}
-          {/* Display validation error message */}
+          
+          <div className="input_group">
+              <label htmlFor="carType">Car Type</label>
+              <select id="carType" {...register("carType", { required: "Car Type is required", validate: value => validCarTypes.includes(value) || "We don't have this type of car " })}>
+                <option value="">Select Car Type</option>
+                {validCarTypes.map(carType => (
+                  <option key={carType} value={carType}>{carType}</option>
+                ))}
+              </select>
+              {errors.carType && <p style={errorStyle}>{errors.carType.message}</p>}
+              {/* Display validation error message */}
+          </div>
+          
         </div>
 
         <div className="message">
@@ -84,13 +99,13 @@ const HomeForm: React.FC<ChildProps> = ({ sendDataToParent }) => {
           {/* Display validation error message */}
         </div>
 
-        <StyledBtn type="submit">Send Message</StyledBtn>
+        <StyledBtn className='appointement-btn' type="submit">Make appointement</StyledBtn>
       </form>
       {messageBoxOn && (
         <div className="message-box">
           <h1>Great Job</h1>
           {getValues("username")} you made an appointemet <br />
-          You will find convinient time and email you on the adress that you provided
+          You will find a convinient time and email you on the adress that you provided
           <CloseBtn onClick={closeMessageBox}>Close</CloseBtn>
         </div>
       )}

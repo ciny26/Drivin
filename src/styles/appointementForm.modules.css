@@ -1,42 +1,86 @@
 /* form.modules.css */
 
-.form-container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
+
+ .appointement-form{
+  width: 80%;
+  box-sizing: border-box;
+  margin: 0 auto;
+  background-color: #ffc107;
+  color: rgb(2, 2, 73);
+  padding: 40px 20px;
+  margin-bottom: 60px;
+ }
+
   
-  .form-heading {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 20px;
-  }
-  
-  .form-group {
+  .personData , .courseData{
     display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 20px;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+  }
+
+
+  .input_group{
+    width: 50%;
+    padding: 0 6px;
+  }
+  .message{
+    padding: 0 6px;
   }
   
-  .input-group {
-    flex: 1;
-    margin-right: 10px;
-  }
-  
-  .input-group label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  .form-input {
+ .appointement-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    background-color: rgb(2, 2, 73) !important;
+    margin: 4px 0;
   }
-  
+  .appointement-btn:hover{
+    background-color: #007bff !important;
+  }
+  input, select, textarea {
+    box-sizing: border-box; /* Ensure padding and border are included in the element's total width */
+    width: 100%; /* Make input fields fill their parent container */
+  }
+
+
+  /* Apply styles to the select element */
+select {
+  width: 100%; /* Make the select fill its parent container */
+  padding: 10px; /* Add padding for spacing */
+  font-size: 16px; /* Set the font size */
+  border: 1px solid #ccc; /* Add border */
+  border-radius: 5px; /* Add border radius for rounded corners */
+  background-color: #fff; /* Set background color */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+}
+
+/* Style the select arrow */
+select::after {
+  content: '\25BC'; /* Unicode for down arrow */
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  pointer-events: none; /* Ensure the arrow is not clickable */
+}
+
+/* Style the select dropdown */
+select option {
+  padding: 10px; /* Add padding for spacing */
+  font-size: 16px; /* Set the font size */
+  background-color: #fff; /* Set background color */
+  color: #333; /* Set text color */
+}
+
+/* Style the select when it's focused */
+select:focus {
+  outline: none; /* Remove default focus style */
+  border-color: #007bff; /* Change border color when focused */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add a box shadow when focused */
+}
+
   .error-message {
     color: red;
     font-size: 0.9rem;
@@ -44,18 +88,42 @@
   }
   
   .message-box {
-    background-color: #f0f0f0;
-    padding: 20px;
-    border-radius: 5px;
-    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.6); /* Shadow */
+    border: 0.5px solid rgba(0, 0, 0, 0.233);
+    padding: 20px; /* Add some padding */
+    position: sticky; /* Change to fixed */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center the box */
+    max-width: 250px; /* Set maximum width */
+    text-align: center; /* Center text */
+    z-index: 9999; /* Higher z-index */
   }
   
-  .message-box h2 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-  }
-  
-  .message-box p {
-    margin-bottom: 10px;
+  @media (max-width:580px){
+    .appointement-form{
+      width: 100%;
+      margin: 0;
+    }
+    .personData , .courseData{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 8px;
+    }
+    .input_group{
+      width: 100%;
+      padding: 0 6px;
+    }
+
+    .message-box {
+      
+      transform: translate(-50%, -50%); /* Center the box */
+      
+    }
   }
   

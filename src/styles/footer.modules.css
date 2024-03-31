@@ -30,3 +30,16 @@
     display: inline;
     background: #020d18;
 }
+
+@media(max-width:780px){
+    .footer-container{
+        flex-direction: column;
+        height: fit-content;
+        padding: 0.5rem ;
+    }
+    .info-wrapper > * {
+        text-align: center;
+        justify-content: center;
+        width: 100%;
+    }
+}

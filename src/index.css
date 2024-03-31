@@ -78,3 +78,8 @@ html , body{
   background-color: #ffc107;
 }
 
+@media (max-width:700px) {
+  .card-container{
+    width: 80%;
+  }
+}

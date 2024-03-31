@@ -41,19 +41,27 @@ const ContactForm: React.FC<ChildProps> = ({ sendDataToParent }) => {
 
   return (
     <>
-      <form onSubmit={handleSubmit(onSubmit)} noValidate>
+      <form className="message-form" onSubmit={handleSubmit(onSubmit)} noValidate>
         <p>CONTACT US</p>
         <h1> If You Have Any Query, Please Contact Us</h1>
         <div className="personData">
-          <label htmlFor="username">Your Name</label>
-          <input type="text" id="username" {...register("username", { required: "Username is required", pattern: { value: /^[a-zA-Z ]{2,30}$/, message: "Invalid name" } })} />
-          {errors.username && <p style={errorStyle}>{errors.username.message}</p>}
-          {/* Display validation error message */}
+          <div className="input_group">
+              <label htmlFor="username">Your Name</label>
+              <input type="text" id="username" {...register("username", { required: "Username is required", pattern: { value: /^[a-zA-Z ]{2,30}$/, message: "Invalid name" } })} />
+              {errors.username && <p style={errorStyle}>{errors.username.message}</p>}
+              {/* Display validation error message */}
+          </div>
+          
 
-          <label htmlFor="email">Your Email</label>
-          <input type="email" id="email" {...register("email", { required: "Email is required", pattern: { value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i, message: "Invalid email address" } })} />
-          {errors.email && <p style={errorStyle}>{errors.email.message}</p>}
-          {/* Display validation error message */}
+
+
+          <div className="input_group">
+            <label htmlFor="email">Your Email</label>
+            <input type="email" id="email" {...register("email", { required: "Email is required", pattern: { value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i, message: "Invalid email address" } })} />
+            {errors.email && <p style={errorStyle}>{errors.email.message}</p>}
+            {/* Display validation error message */}
+          </div>
+          
         </div>
 
         <div className="subject">

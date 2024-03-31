@@ -1,6 +1,7 @@
-form {
+.message-form {
     width: 80%;
     margin: 0 auto;
+    
   }
   
   label {
@@ -18,9 +19,13 @@ form {
     background: #e4eef7
 
   }
+  .subject{
+    padding: 0 12px;
+  }
   
   textarea {
     height: 150px; /* Adjust height as needed */
+    padding: 0 12px;
   }
   
   .message-box {
@@ -48,3 +53,20 @@ form {
     opacity: 0.5;
   }
   
+
+  @media (max-width:950px){
+    
+    .message-box {
+      
+      transform: translate(-50%, -50%); /* Center the box */
+      
+    }
+  }
+
+  @media (max-width:580px){
+    .appointement-form{
+      width: 100%;
+      margin: 0;
+    }
+    
+  }

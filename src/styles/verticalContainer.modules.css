@@ -4,6 +4,7 @@
     height: fit-content;
     align-items: center;
     justify-content: space-around;
+    margin-bottom: 60px;
 }
 
 .v-left-side , .v-right-side{
@@ -46,4 +47,11 @@ button{
 
   /* Define styles when the component becomes visible */
   
-  
+  @media(max-width : 950px){
+        .container{
+            flex-direction: column;
+        }
+        .v-left-side , .v-right-side{
+            width: 70%;
+        }
+  }
