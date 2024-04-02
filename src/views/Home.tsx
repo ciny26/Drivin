@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import ImgHeader from '../components/mainComponents/ImgHeader';
 import VerticalContainer from "../components/mainComponents/VerticalContainer";
 import HorizontalContainer from "../components/mainComponents/HorizontalContainer";
@@ -14,9 +14,7 @@ import HomeForm from '../components/HomeComps/AppointementForm';
 
 const Home = () => {
 
-  const handleMessageBoxStatus = (status: boolean) => {
-    /* setIsMessageBoxOn(status); */
-  };
+ 
 
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -46,7 +44,7 @@ const Home = () => {
           ))}
         </div>
       </HorizontalContainer>
-      <HomeForm sendDataToParent={handleMessageBoxStatus} />
+      <HomeForm/>
     </>
   );
 };

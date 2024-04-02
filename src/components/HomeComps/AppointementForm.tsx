@@ -23,13 +23,11 @@ type FormData = {
   message: string;
 };
 
-interface ChildProps {
-  sendDataToParent: (data: boolean) => void; // Define callback function type
-}
+
 
 
   
-const HomeForm: React.FC<ChildProps> = ({ sendDataToParent }) => {
+const HomeForm = () => {
 
   const componentRef = useRef<HTMLFormElement>(null);
   const isVisible = handleScroll(componentRef);
@@ -41,14 +39,14 @@ const HomeForm: React.FC<ChildProps> = ({ sendDataToParent }) => {
   // Define an array of valid car types
   const validCarTypes: string[] = ['Toyota', 'Honda', 'Ford', 'Chevrolet', 'Nissan'];
 
-  const onSubmit = (data: FormData) => {
+  const onSubmit = () => {
     setMessageBoxOn(true);
-    sendDataToParent(true); // Sending true to parent to indicate message box is on
+    
   };
 
   const closeMessageBox = () => {
     setMessageBoxOn(false);
-    sendDataToParent(false); // Sending false to parent to indicate message box is closed
+    
   };
 
   return (
@@ -61,7 +59,7 @@ const HomeForm: React.FC<ChildProps> = ({ sendDataToParent }) => {
               <label htmlFor="username">Your Name</label>
               <input type="text" id="username" {...register("username", { required: "Username is required", pattern: { value: /^[a-zA-Z ]{2,30}$/, message: "Invalid name" } })} />
               {errors.username && <p style={errorStyle}>{errors.username.message}</p>}
-              {/* Display validation error message */}
+              
           </div>
           
 
@@ -81,7 +79,6 @@ const HomeForm: React.FC<ChildProps> = ({ sendDataToParent }) => {
               <label htmlFor="course">Course</label>
               <input type="text" id="course" {...register("course", { required: "Course is required" })} />
               {errors.course && <p style={errorStyle}>{errors.course.message}</p>}
-              {/* Display validation error message */}
           </div>
           
 
@@ -95,7 +92,6 @@ const HomeForm: React.FC<ChildProps> = ({ sendDataToParent }) => {
                 ))}
               </select>
               {errors.carType && <p style={errorStyle}>{errors.carType.message}</p>}
-              {/* Display validation error message */}
           </div>
           
         </div>
@@ -104,7 +100,6 @@ const HomeForm: React.FC<ChildProps> = ({ sendDataToParent }) => {
           <label htmlFor="message">Message</label>
           <textarea id="message" {...register("message", { required: "Message is required" })}></textarea>
           {errors.message && <p style={errorStyle}>{errors.message.message}</p>}
-          {/* Display validation error message */}
         </div>
 
         <StyledBtn className='appointement-btn' type="submit">Make appointement</StyledBtn>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import ImagedItem from "../elementComps/imagedItem";
 import { getInTouchData, quickLinksData, followUsData } from "../../DynamicData";
 import rightArrow from "../../assets/svgs/rightArrow.svg";

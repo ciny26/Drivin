@@ -4,7 +4,6 @@ import { Route , Routes } from 'react-router-dom'
 import Home from './views/Home'
 import About from './views/About'
 import Courses from './views/Courses'
-import Pages from './views/Pages'
 import Contact from './views/Contact'
 import Footer from './components/mainComponents/Footer'
 

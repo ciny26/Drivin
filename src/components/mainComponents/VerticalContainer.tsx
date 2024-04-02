@@ -1,5 +1,4 @@
 import "../../styles/verticalContainer.modules.css";
-// VerticalContainer.tsx
 import { useRef } from "react";
 import { handleScroll } from "../../DynamicData";
 
