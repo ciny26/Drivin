@@ -172,7 +172,7 @@ export const overlayImg = [
 // scrollAnimation.ts
 import { useState, useEffect } from 'react';
 
-export const handleScroll = (compRef: React.RefObject<HTMLDivElement>) => {
+export const handleScroll = (compRef: React.RefObject<HTMLDivElement | HTMLFormElement> ) => {
   const [isVisible, setIsVisible] = useState(false);
   const [hasBeenScrolledIntoView, setHasBeenScrolledIntoView] = useState(false);
 

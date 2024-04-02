@@ -10,9 +10,6 @@ const HorizontalContainer = ({ children }: HorizontalContainerProps) => {
     const upSideRef = useRef<HTMLDivElement>(null);
     const bottomSideRef = useRef<HTMLDivElement>(null);
 
-    console.log("isVisibleUpSide:", handleScroll(upSideRef));
-    console.log("isVisibleBottomSide:", handleScroll(bottomSideRef));
-
     const isVisibleUpSide = handleScroll(upSideRef);
     const isVisibleBottomSide = handleScroll(bottomSideRef);
 

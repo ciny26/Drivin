@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState , useRef } from 'react';
+import { handleScroll } from '../../DynamicData';
 import { StyledBtn } from "../elementComps/StyledBtn.styles";
 import { CloseBtn } from "../elementComps/StyledBtn.styles";
 import "../../styles/verticalContainer.modules.css";
@@ -26,7 +27,14 @@ interface ChildProps {
   sendDataToParent: (data: boolean) => void; // Define callback function type
 }
 
+
+  
 const HomeForm: React.FC<ChildProps> = ({ sendDataToParent }) => {
+
+  const componentRef = useRef<HTMLFormElement>(null);
+  const isVisible = handleScroll(componentRef);
+
+
   const { register, handleSubmit, formState: { errors }, getValues } = useForm<FormData>();
   const [messageBoxOn, setMessageBoxOn] = useState<boolean>(false);
 
@@ -45,7 +53,7 @@ const HomeForm: React.FC<ChildProps> = ({ sendDataToParent }) => {
 
   return (
     <>
-      <form className='appointement-form' onSubmit={handleSubmit(onSubmit)} noValidate>
+      <form ref={componentRef} className={`appointement-form  ${isVisible ? "visible" : ""}`} onSubmit={handleSubmit(onSubmit)} noValidate>
         
         <h1> Make an appointment</h1>
         <div className="personData">
@@ -102,7 +110,7 @@ const HomeForm: React.FC<ChildProps> = ({ sendDataToParent }) => {
         <StyledBtn className='appointement-btn' type="submit">Make appointement</StyledBtn>
       </form>
       {messageBoxOn && (
-        <div className="message-box">
+        <div className="appointement-message-box">
           <h1>Great Job</h1>
           {getValues("username")} you made an appointemet <br />
           You will find a convinient time and email you on the adress that you provided
