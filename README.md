@@ -49,7 +49,7 @@ Drivit is a simple and responsive frontend-only web application for a driving sc
     # or
    yarn dev
 
-5. Start the development server:
+5. Start the production server:
 
    npm run build
     # or
